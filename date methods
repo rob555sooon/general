@@ -1,0 +1,24 @@
+<script>
+var date = new Date(), y = date.getFullYear(), m = date.getMonth();
+var firstDay = new Date(y, m, 1);
+var lastDay = new Date(y, m + 1, 0);
+const monthNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
+
+Date.prototype.addDays = function(days, sign) 
+{
+	var date = new Date(this.valueOf());
+	if(sign == '+')
+	{
+		date.setDate(date.getDate() + days);
+	}
+	else if(sign == '-')
+	{
+		date.setDate(date.getDate() - days);
+	}	
+	return date;
+}
+
+alert(lastDay.addDays(3, '-'));
+</script>
